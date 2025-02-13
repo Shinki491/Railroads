@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Railways</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="menu">
+    <h1>RAILWAYS</h1>
+    <form id="startForm">
+      <input type="text" id="playerName" placeholder="WHO ARE YOU?" required>
+      <div class="difficulty-container">
+        <div class="difficulty-type">
+          <button type="button" class="difficulty-button" id="easyButton" >5 X 5 </button>
+          <p>Easy</p>
+        </div>
+        <div class="difficulty-type">
+          <button type="button" class="difficulty-button" id="hardButton" >7 X 7</button>
+          <p>Hard</p>
+        </div>
+      </div>
+      <div class="action-buttons">
+        <button type="button" class="action-button rules" >RULES</button>
+        <button type="button" class="action-button start" >START GAME</button>
+      </div>
+    </form>
+  </div>
+
+  
+  <div id="game" class="hidden">
+    <button id="goBack" >Go Back</button>
+    
+    <div id="gameContainer">
+      
+      <div id="playerInfo">
+        <p>Route Designer:</p>
+        <p id="playerNameDisplay"></p>
+        <hr>
+        <p>Elapsed Time:</p>
+        <p id="elapsedTime">00:00</p>
+      </div>
+  
+    
+      <div id="gameContent">
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="descriptionPopup" class="popup hidden">
+    <div class="popup-content">
+      <span class="close-popup" >&times;</span>
+      <h2>Game Overview</h2>
+      <p>The game is played on a square grid of various sizes, where the goal is to create a continuous circular railway line that reaches every place where the train can travel.</p>
+
+   
+      <div class="image-row">
+        
+        <div class="image-container">
+          <img src="tiles/empty.png" class="feature-image">
+          <p>In this cell, the railway can continue in any of the three directions besides the entry direction.</p>
+        </div>
+
+        
+        <div class="image-container">
+          <img src="tiles/bridge.png" class="feature-image">
+          <p>On this tile, the railway can only be built in the straight direction defined by the bridge.</p>
+        </div>
+
+        
+        <div class="image-container">
+          <img src="tiles/mountain.png" class="feature-image">
+          <p>These tiles have rocks that block two adjacent exits, so the train can only continue by turning 90 degrees.</p>
+        </div>
+
+        <div class="image-container">
+          <img src="tiles/oasis.png" class="feature-image">
+          <p>No railway can be built on this tile.</p>
+        </div>
+      </div>
+
+
+      <p>Since we want to save on the materials for the railway network, the railway line cannot cross itself, branch off, or pass through a cell more than once!</p>
+      
+    </div>
+  </div>
+
+
+  <div id="warningPopup" class="popup hidden">
+    <div class="popup-content">
+      <span class="close-popup" >&times;</span>
+      <p>Please enter a player name and choose a difficulty!</p>
+    </div>
+  </div>
+
+  <div id="winPopup" class="win-popup hidden">
+    <div class="win-popup-content">
+      <h2>Congratulations!</h2>
+      <p>Your finished in: </p><p id="winTime">00:00</p>
+      
+      <h3>Leaderboard</h3>
+      <ul id="leaderboard">
+        
+      </ul>
+      
+      <button id="mainMenuButton">Main Menu</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
